@@ -2,8 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 // Get environment-specific API URL
-const API_URL =
-  process.env.NODE_ENV === "production"
+const API_URL = process.env.NODE_ENV === "production"
     ? "http://123.63.252.138:5000"
     : "http://localhost:5000";
 

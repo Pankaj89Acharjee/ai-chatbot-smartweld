@@ -47,6 +47,7 @@ import AuthGuard from "../../authentication/AuthGurad";
 // Custom hooks
 import useIdleTimer from "../../customHooks/useIdleTimers";
 import PlannedDowntimeManagement from "../../pages/PlannedDowntimeManagement";
+import ChatResponse from "../../pages/ChatResponse";
 
 const DashboardLayout = () => {
   const {
@@ -274,6 +275,11 @@ const DashboardLayout = () => {
       roles: ["ADMIN", "SUPERVISOR"],
       component: PlannedDowntimeManagement,
     },
+    {
+      path: "/aiChat",
+      roles: ["ADMIN", "ADMINISTRATOR", "SUPERVISOR", "ORGADMIN"],
+      component: ChatResponse,
+    },
   ];
 
   // Memoized rendering of routes to prevent unnecessary re-renders
@@ -321,9 +327,8 @@ const DashboardLayout = () => {
 
         {/* Main content area */}
         <div
-          className={`dark:bg-main-dark-bg bg-main-bg min-h-screen ${
-            activeMenu ? "w-[calc(100vw-18.375rem)]" : "w-full"
-          } ${activeMenu ? "md:ml-72" : "flex-1"}`}
+          className={`dark:bg-main-dark-bg bg-main-bg min-h-screen ${activeMenu ? "w-[calc(100vw-18.375rem)]" : "w-full"
+            } ${activeMenu ? "md:ml-72" : "flex-1"}`}
         >
           {/* Navbar */}
           <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">

@@ -163,7 +163,7 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {isClicked?.chat && <Chat />}
+        {isClicked?.chat && <Chat currentColor={currentColor} />}
         {isClicked?.notification && <Notification />}
         {isClicked?.userProfile && <UserProfile />}
         {isClicked?.calendar && <CalendarIcon />}
